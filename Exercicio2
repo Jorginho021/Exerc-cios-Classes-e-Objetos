@@ -1,0 +1,69 @@
+//MAIN
+package exercicio2;
+
+
+public class Exercicio2 {
+
+    
+    public static void main(String[] args) {
+       
+        ContaBancaria conta = new ContaBancaria();
+
+
+        conta.titular = "Maria Oliveira";
+        conta.numeroConta = "12345-6";
+        conta.saldo = 500.0;
+
+       
+        conta.exibirDados();
+
+       
+        conta.depositar(300.0);
+        conta.sacar(200.0);
+        conta.sacar(800.0);
+
+        
+        conta.exibirDados();
+    }
+}
+
+//Classe
+
+package exercicio2;
+
+
+public class ContaBancaria {
+
+    String titular;
+    double saldo;
+    String numeroConta;
+
+   
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Depósito de R$" + valor + " realizado com sucesso!");
+        } else {
+            System.out.println("Valor de depósito inválido!");
+        }
+    }
+
+    
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque de R$" + valor + " realizado com sucesso!");
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido!");
+        }
+    }
+
+  
+    public void exibirDados() {
+        System.out.println("\n=== Dados da Conta ===");
+        System.out.println("Titular: " + titular);
+        System.out.println("Número da Conta: " + numeroConta);
+        System.out.println("Saldo atual: R$" + saldo);
+    }
+}
+
