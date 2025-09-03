@@ -1,0 +1,64 @@
+//Main
+package exercicio07;
+
+
+public class Exercicio07 {
+
+    public static void main(String[] args) {
+        
+// Criando um objeto Estudante
+        Estudante estudante = new Estudante("Jorge", 16);
+
+        // Exibindo disciplinas iniciais (vai estar vazio)
+        estudante.exibirDisciplinas();
+
+        // Adicionando disciplinas
+        estudante.adicionarDisciplina("Matemática");
+        estudante.adicionarDisciplina("Português");
+        estudante.adicionarDisciplina("História");
+        estudante.adicionarDisciplina("Educação Física");
+
+        // Exibindo disciplinas atualizadas
+        estudante.exibirDisciplinas();
+    }
+}
+
+//Classe package exercicio07;
+
+import java.util.ArrayList;
+
+
+public class Estudante {
+    
+
+    // Atributos
+    String nome;
+    int idade;
+    ArrayList<String> disciplinas;
+
+    // Construtor
+    public Estudante(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+        this.disciplinas = new ArrayList<>(); // Inicializa a lista
+    }
+
+    // Método para adicionar disciplinas
+    public void adicionarDisciplina(String disciplina) {
+        disciplinas.add(disciplina);
+        System.out.println("Disciplina '" + disciplina + "' adicionada com sucesso!");
+    }
+
+    // Método para exibir todas as disciplinas
+    public void exibirDisciplinas() {
+        System.out.println("\nDisciplinas matriculadas de " + nome + ":");
+        if (disciplinas.isEmpty()) {
+            System.out.println("Nenhuma disciplina cadastrada.");
+        } else {
+            for (int i = 0; i < disciplinas.size(); i++) {
+                System.out.println((i + 1) + " - " + disciplinas.get(i));
+            }
+        }
+        System.out.println("---------------------------------------");
+    }
+}
