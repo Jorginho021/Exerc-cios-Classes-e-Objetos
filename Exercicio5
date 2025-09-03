@@ -1,0 +1,52 @@
+//main
+package exercicio05;
+
+
+public class Exercicio05 {
+
+    
+    public static void main(String[] args) {
+      
+        // Criando um objeto Retangulo
+        Retangulo ret = new Retangulo(8, 5);
+
+        // Exibindo informações do retângulo
+        ret.exibirInfo();
+    }
+}
+  //Classe
+package exercicio05;
+
+
+public class Retangulo {
+ 
+    // Atributos
+    double largura;
+    double altura;
+
+    // Construtor
+    public Retangulo(double largura, double altura) {
+        this.largura = largura;
+        this.altura = altura;
+    }
+
+    // Método para calcular a área
+    public double calcularArea() {
+        return largura * altura;
+    }
+
+    // Método para calcular o perímetro
+    public double calcularPerimetro() {
+        return 2 * (largura + altura);
+    }
+
+    // Método para exibir informações
+    public void exibirInfo() {
+        System.out.println("Largura: " + largura);
+        System.out.println("Altura: " + altura);
+        System.out.println("Área: " + calcularArea());
+        System.out.println("Perímetro: " + calcularPerimetro());
+        System.out.println("--------------------------------");
+    }
+ }  
+}
