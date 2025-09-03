@@ -1,0 +1,71 @@
+//Main
+package exercicio03;
+
+
+public class Exercicio03 {
+
+    public static void main(String[] args) {
+
+        // Criando um objeto Carro
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2022);
+
+        // Testando os métodos
+        meuCarro.exibirVelocidade();
+
+        meuCarro.acelerar(40);
+        meuCarro.exibirVelocidade();
+
+        meuCarro.acelerar(30);
+        meuCarro.exibirVelocidade();
+
+        meuCarro.desacelerar(20);
+        meuCarro.exibirVelocidade();
+
+        meuCarro.desacelerar(60);
+        meuCarro.exibirVelocidade();
+    }
+}
+    //Classe principal
+package exercicio03;
+
+
+public class Carro {
+  
+    // Atributos
+    String marca;
+    String modelo;
+    int ano;
+    int velocidade;
+
+    // Construtor
+    public Carro(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.velocidade = 0; // começa parado
+    }
+
+    // Método para acelerar o carro
+    public void acelerar(int incremento) {
+        velocidade += incremento;
+        System.out.println("O carro acelerou " + incremento + " km/h.");
+    }
+
+    // Método para desacelerar o carro
+    public void desacelerar(int decremento) {
+        if (velocidade - decremento < 0) {
+            velocidade = 0;
+        } else {
+            velocidade -= decremento;
+        }
+        System.out.println("O carro desacelerou " + decremento + " km/h.");
+    }
+
+    // Método para exibir a velocidade atual
+    public void exibirVelocidade() {
+        System.out.println("Velocidade atual: " + velocidade + " km/h");
+    }
+}
+
+
+
